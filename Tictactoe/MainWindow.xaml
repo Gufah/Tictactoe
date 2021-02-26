@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Tictactoe"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Tic tac Toe" Height="450" Width="450">
+        Title="Tic tac Toe" Height="700" Width="450">
 
     <Window.Resources>
         <Style TargetType="Button" >
@@ -18,29 +18,31 @@
         </Style>
     </Window.Resources>
 
-    <Grid x:Name="Box">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+    <StackPanel>
+        <Grid x:Name="Box" Height="700">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
-        <Button x:Name="Button0_0" Click="Button_Click" Grid.Column="0" Grid.Row="0" Content="X"/>
-        <Button x:Name="Button1_0" Click="Button_Click" Grid.Column="1" Grid.Row="0" Content="O"/>
-        <Button x:Name="Button2_0" Click="Button_Click" Grid.Column="2" Grid.Row="0" />
+            <Button x:Name="Button0_0" Click="Button_Click" Grid.Column="0" Grid.Row="0" Content="X"/>
+            <Button x:Name="Button1_0" Click="Button_Click" Grid.Column="1" Grid.Row="0" Content="O"/>
+            <Button x:Name="Button2_0" Click="Button_Click" Grid.Column="2" Grid.Row="0" />
 
-        <Button x:Name="Button0_1" Click="Button_Click" Grid.Column="0" Grid.Row="1" Content="O"/>
-        <Button x:Name="Button1_1" Click="Button_Click" Grid.Column="1" Grid.Row="1" />
-        <Button x:Name="Button2_1" Click="Button_Click" Grid.Column="2" Grid.Row="1" />
+            <Button x:Name="Button0_1" Click="Button_Click" Grid.Column="0" Grid.Row="1" Content="O"/>
+            <Button x:Name="Button1_1" Click="Button_Click" Grid.Column="1" Grid.Row="1" />
+            <Button x:Name="Button2_1" Click="Button_Click" Grid.Column="2" Grid.Row="1" />
 
-        <Button x:Name="Button0_2" Click="Button_Click" Grid.Column="0" Grid.Row="2" />
-        <Button x:Name="Button1_2" Click="Button_Click" Grid.Column="1" Grid.Row="2" />
-        <Button x:Name="Button2_2" Click="Button_Click" Grid.Column="2" Grid.Row="2" />
-    </Grid>
+            <Button x:Name="Button0_2" Click="Button_Click" Grid.Column="0" Grid.Row="2" />
+            <Button x:Name="Button1_2" Click="Button_Click" Grid.Column="1" Grid.Row="2" />
+            <Button x:Name="Button2_2" Click="Button_Click" Grid.Column="2" Grid.Row="2" />
+        </Grid>
+    </StackPanel>
 </Window>

@@ -6,8 +6,10 @@ namespace Tictactoe
 {
     enum ButtonSymbol
     {
-        Zero = 2,   // The cell or button is a O
-        Ex = 1,    // The cell or button is a X
-        Free = 0    // The cell or button has not been clicked yet
+        Free,   // The cell or button has not been clicked yet
+        Ex,     // The cell or button is a X
+        Zero,   // The cell or button is a O
+           
+            
     }
 }
