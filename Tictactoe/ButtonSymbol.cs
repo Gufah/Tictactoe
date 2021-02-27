@@ -8,8 +8,6 @@ namespace Tictactoe
     {
         Free,   // The cell or button has not been clicked yet
         Ex,     // The cell or button is a X
-        Zero,   // The cell or button is a O
-           
-            
+        Zero,   // The cell or button is a O                     
     }
 }
