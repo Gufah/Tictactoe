@@ -36,13 +36,8 @@ namespace Tictactoe
             {          
                 gameWindow.Show();
                 this.Close();
-                Submit();
             }
         }
 
-        private void Submit()
-        {
-            Player1Name xPlayer = new Player1Name(XPlayerName);
-        }
     }
 }

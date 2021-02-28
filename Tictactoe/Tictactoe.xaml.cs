@@ -18,8 +18,6 @@ namespace Tictactoe
 
         ButtonSymbol[] status;  // holds the status of the cells in an array
 
-        public object XPlayerName { get; }
-
         #endregion
 
         #region Constructor
@@ -170,7 +168,7 @@ namespace Tictactoe
             return false;
         }
 
-        void Player1Name(string text);
+        
 
     }
 }
