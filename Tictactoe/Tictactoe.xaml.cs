@@ -18,16 +18,30 @@ namespace Tictactoe
 
         ButtonSymbol[] status;  // holds the status of the cells in an array
 
+        private readonly string player1Name;
+
+        private readonly string player2Name;
+
+        private int player1Score = 0;
+
+        private int player2Score = 0;
+
         #endregion
 
         #region Constructor
-        public GameWindow() // default constructor
+        public GameWindow(string player1Name, string player2Name) // default constructor
         {
             InitializeComponent();
 
+            this.player1Name = player1Name;
+            this.player2Name = player2Name;
             NewGame();
+        }
 
-            
+        public GameWindow() // default constructor
+        {
+            InitializeComponent();
+            NewGame();
         }
 
 
@@ -37,7 +51,12 @@ namespace Tictactoe
         /// Default start of the game
         /// </summary>
         private void NewGame()
-        {            
+        {
+            XPlayer.Text = player1Name;
+            OPlayer.Text = player2Name;
+
+            player1ScoreTb.Text = player1Score.ToString();
+            player2ScoreTb.Text = player2Score.ToString();
             // Set player 1 as current player
             playerTurn = true;
 
@@ -65,7 +84,6 @@ namespace Tictactoe
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
             var cell = (Button)sender;
             var column = Grid.GetColumn(cell);
             var row = Grid.GetRow(cell);
@@ -79,13 +97,14 @@ namespace Tictactoe
             {
                 status[cellNumber] = ButtonSymbol.Ex;
                 cell.Content = "X";
-                cell.Foreground = Brushes.Black;
+                cell.Foreground = Brushes.DarkRed;
                 playerTurn = false;
             }
             else
             {
                 status[cellNumber] = ButtonSymbol.Zero;
                 cell.Content = "O";
+                cell.Foreground = Brushes.DarkRed;
                 playerTurn = true;
             }                 
 
@@ -105,11 +124,17 @@ namespace Tictactoe
             {                
                 var winner = "";
 
-                if (playerTurn)
-                    winner = "Player 2";
+                if (playerTurn) 
+                { 
+                    winner = player2Name;
+                    player2Score++;
+                }
                 else
-                    winner = "Player 1";
-
+                {
+                    winner = player1Name;
+                    player1Score++;
+                }
+                    
                 MessageBox.Show($"{winner} wins");
                 NewGame();
             }
@@ -168,7 +193,23 @@ namespace Tictactoe
             return false;
         }
 
-        
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
 
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            NewGame();
+            player1Score = 0;
+            player2Score = 0;
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }    
     }
 }

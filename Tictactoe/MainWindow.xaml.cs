@@ -24,20 +24,19 @@ namespace Tictactoe
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            GameWindow gameWindow = new GameWindow();
-
-
             // make sure the player names are inputted
             if (string.IsNullOrEmpty(XPlayerName.Text) || string.IsNullOrEmpty(OPlayerName.Text))
             {
                 MessageBox.Show("To start the game, you need to input both player names");
             }
             else 
-            {          
+            {
+                GameWindow gameWindow = new GameWindow(XPlayerName.Text, OPlayerName.Text);
                 gameWindow.Show();
                 this.Close();
             }
         }
 
+       
     }
 }
