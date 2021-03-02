@@ -200,9 +200,9 @@ namespace Tictactoe
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            NewGame();
             player1Score = 0;
             player2Score = 0;
+            NewGame();            
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
