@@ -1,6 +1,6 @@
 # Tictactoe
 
-The game is built with WPF and C#. It tells about my learning process.
+The game is built with WPF and C#. Part of my new C# process.
 Please feel free to correct or appraise the code.
 
 
